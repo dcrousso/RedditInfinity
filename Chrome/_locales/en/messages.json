@@ -1,0 +1,10 @@
+{
+	"appName": {
+		"message": "RedditInfinity",
+		"description": "Extension Name."
+	},
+	"appDescription": {
+		"message": "Simple, lightweight infinite scrolling for reddit",
+		"description": "Extension Description."
+	}
+}
