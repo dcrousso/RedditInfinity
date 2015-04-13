@@ -29,6 +29,8 @@ function init() {
 						}, "", nextURL);
 
 						for(var i = 0; i < newContent.children.length; ++i) {
+							var rank = newContent.children[i].querySelector("span.rank");
+							if(rank) rank.style.width = (rank.textContent.length * 1.1) + "ex";
 							content.appendChild(newContent.children[i]);
 						}
 						content.removeChild(navigation);
