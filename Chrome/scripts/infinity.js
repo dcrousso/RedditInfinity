@@ -1,44 +1,49 @@
 var content = document.getElementById("siteTable");
 var navigation, loadingNewContent;
-pageReload();
 
-window.history.replaceState({
-	content: content.innerHTML
-}, "", document.location.href)
+if(content) init();
 
-window.addEventListener("scroll", function() {
-	if(elementVisible(navigation) && !loadingNewContent) {
-		loadingNewContent = true;
+function init() {
+	pageReload();
 
-		var nextURL = navigation.querySelector(".nextprev a[rel*='next']").href;
-		var xmlhttp = new XMLHttpRequest();
-		xmlhttp.open("GET", nextURL, true);
-		xmlhttp.onreadystatechange = function() {
-			if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-				var parser = new DOMParser();
-				var dom = parser.parseFromString(xmlhttp.responseText, "text/html");
+	window.history.replaceState({
+		content: content.innerHTML
+	}, "", document.location.href);
 
-				if(dom) {
-					var newContent = dom.getElementById("siteTable");
-					window.history.pushState({
-						content: newContent.innerHTML
-					}, "", nextURL);
+	window.addEventListener("scroll", function() {
+		if(elementVisible(navigation) && !loadingNewContent) {
+			loadingNewContent = true;
 
-					for(var i = 0; i < newContent.children.length; ++i) {
-						content.appendChild(newContent.children[i]);
+			var nextURL = navigation.querySelector(".nextprev a[rel*='next']").href;
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.open("GET", nextURL, true);
+			xmlhttp.onreadystatechange = function() {
+				if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					var parser = new DOMParser();
+					var dom = parser.parseFromString(xmlhttp.responseText, "text/html");
+
+					if(dom) {
+						var newContent = dom.getElementById("siteTable");
+						window.history.pushState({
+							content: newContent.innerHTML
+						}, "", nextURL);
+
+						for(var i = 0; i < newContent.children.length; ++i) {
+							content.appendChild(newContent.children[i]);
+						}
+						content.removeChild(navigation);
+						navigation = content.querySelector(".nav-buttons");
+
+						loadingNewContent = false;
+					} else {
+						window.location = nextURL;
 					}
-					content.removeChild(navigation);
-					navigation = content.querySelector(".nav-buttons");
-
-					loadingNewContent = false;
-				} else {
-					window.location = nextURL;
 				}
-			}
-		};
-		xmlhttp.send();
-	}
-});
+			};
+			xmlhttp.send();
+		}
+	});
+}
 
 function pageReload() {
 	navigation = content.querySelector(".nav-buttons");
