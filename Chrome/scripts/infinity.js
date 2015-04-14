@@ -1,7 +1,8 @@
 var content = document.getElementById("siteTable");
-var navigation, loadingNewContent;
+var navigation = content.querySelector(".nav-buttons");
+var loadingNewContent = false;
 
-if(content) init();
+if(content && navigation) init();
 
 function init() {
 	pageReload();
@@ -11,7 +12,7 @@ function init() {
 	}, "", document.location.href);
 
 	window.addEventListener("scroll", function() {
-		if(elementVisible(navigation) && !loadingNewContent) {
+		if(elementVisible(content.children[content.children.length - 6]) && !loadingNewContent) {
 			loadingNewContent = true;
 
 			var nextURL = navigation.querySelector(".nextprev a[rel*='next']").href;
