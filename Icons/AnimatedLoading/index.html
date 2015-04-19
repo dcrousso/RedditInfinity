@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<style>
+			#svg { background: url("background-infinity.png") no-repeat; }
+		</style>
+	</head>
+	<oody>
+		<div id="svg"></div>
+	</body>
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<script>
+		var width = 500,
+				height = 500;
+
+		var svg = d3.select("#svg")
+			.append("svg")
+				.attr("width", width)
+				.attr("height", height);
+
+		var container = svg.append("svg:g")
+				.attr("transform", "translate(" + (width / 2) + "," + (height / 2) + ")");
+
+		var points = [];
+		for(var i = 0; i < 200; ++i) {
+			var point = container.append("svg:circle")
+					.attr("cx", -width)
+					.attr("cy", -height)
+					.attr("r", 5);
+			points.push(point);
+		}
+
+		var t = 0, scale = 0, x = 0, y = 0;
+		setInterval(function() {
+			var color = 191.25;
+			t -= 0.01;
+			scale = 2 / (3 - Math.cos(2 * t)) * 100;
+			x = scale * Math.cos(t);
+			y = scale * Math.sin(2 * t) / 2;
+			for(var i = points.length - 1; i > 0; --i) {
+				points[i].attr("cx", points[i - 1].node().cx.baseVal.value).attr("cy", points[i - 1].node().cy.baseVal.value).style("fill", d3.rgb(color, color, color));
+				color -=  255 / points.length;
+			}
+			points[0].attr("cx", x).attr("cy", y).style("fill", "#000");
+		}, 1);
+	</script>
+</html>
