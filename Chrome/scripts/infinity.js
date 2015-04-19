@@ -2,6 +2,22 @@ var content = document.getElementById("siteTable");
 var navigation = content.querySelector(".nav-buttons");
 var loadingNewContent = false;
 
+var loading = document.createElement("span");
+loading.id = "redditInfinity-loading";
+
+var loadingGIF = document.createElement("img");
+loadingGIF.src = chrome.extension.getURL("/images/loading.gif");
+loadingGIF.style.position = "relative";
+loadingGIF.style.top = "7px";
+loadingGIF.style.left = "17px";
+loading.appendChild(loadingGIF);
+
+var loadingText = document.createElement("span");
+loadingText.style.paddingLeft = "20px";
+loadingText.style.fontSize = "12px";
+loadingText.textContent = "Loading...";
+loading.appendChild(loadingText);
+
 if(content && navigation) init();
 
 function init() {
@@ -14,6 +30,7 @@ function init() {
 	window.addEventListener("scroll", function() {
 		if(elementVisible(content.children[content.children.length - 6]) && !loadingNewContent) {
 			loadingNewContent = true;
+			navigation.appendChild(loading);
 
 			var nextURL = navigation.querySelector(".nextprev a[rel*='next']").href;
 			var xmlhttp = new XMLHttpRequest();
