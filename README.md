@@ -7,7 +7,7 @@ A simple and lightweight plugin for Reddit that, once the user has scrolled down
 Browser | Link | Version | Source Code
 ------- | ---- | ------- | -----------
 Chrome | [Web Store](//chrome.google.com/webstore/detail/redditinfinity/klldlkapcnpaanaeamibkgaljpblgkic) | 1.0.4 | [github folder](//github.com/dcrousso/RedditInfinity/tree/master/Chrome)
-Firefox | [Add-Ons](addons.mozilla.org/en-US/firefox/addon/redditinfinity/) | 1.0.4 | [github folder](//github.com/dcrousso/RedditInfinity/tree/master/Firefox)
+Firefox | [Add-Ons](//addons.mozilla.org/en-US/firefox/addon/redditinfinity/) | 1.0.4 | [github folder](//github.com/dcrousso/RedditInfinity/tree/master/Firefox)
 
 ### Changelog
 
