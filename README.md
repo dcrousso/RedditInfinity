@@ -8,6 +8,7 @@ Browser | Link | Version | Source Code
 ------- | ---- | ------- | -----------
 Chrome | [Web Store](//chrome.google.com/webstore/detail/redditinfinity/klldlkapcnpaanaeamibkgaljpblgkic) | 1.0.4 | [github folder](//github.com/dcrousso/RedditInfinity/tree/master/Chrome)
 Firefox | [Add-Ons](//addons.mozilla.org/en-US/firefox/addon/redditinfinity/) | 1.0.4 | [github folder](//github.com/dcrousso/RedditInfinity/tree/master/Firefox)
+Safari| [download](//devinrousso.com/projects/RedditInfinity/RedditInfinity.safariextz) | 1.0.4 | [github folder](//github.com/dcrousso/RedditInfinity/tree/master/Safari)
 
 ### Changelog
 
