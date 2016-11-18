@@ -5,7 +5,7 @@
 	<key>Author</key>
 	<string>Devin Rousso</string>
 	<key>Builder Version</key>
-	<string>9537.77.4</string>
+	<string>12603.1.12</string>
 	<key>CFBundleDisplayName</key>
 	<string>RedditInfinity</string>
 	<key>CFBundleIdentifier</key>
@@ -30,6 +30,8 @@
 	</dict>
 	<key>Description</key>
 	<string>Simple, lightweight, infinite scrolling for reddit</string>
+	<key>DeveloperIdentifier</key>
+	<string>0000000000</string>
 	<key>ExtensionInfoDictionaryVersion</key>
 	<string>1.0</string>
 	<key>Permissions</key>
@@ -49,6 +51,6 @@
 	<key>Update Manifest URL</key>
 	<string>http://devinrousso.com/projects/RedditInfinity/SafariUpdate.plist</string>
 	<key>Website</key>
-	<string>https://github.com/dcrousso/RedditInfinity/issues</string>
+	<string>http://devinrousso.com</string>
 </dict>
 </plist>
