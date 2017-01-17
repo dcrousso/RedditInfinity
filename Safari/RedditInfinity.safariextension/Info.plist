@@ -5,9 +5,9 @@
 	<key>Author</key>
 	<string>Devin Rousso</string>
 	<key>Builder Version</key>
-	<string>12603.1.12</string>
+	<string>12604.1.2</string>
 	<key>CFBundleDisplayName</key>
-	<string>RedditInfinity</string>
+	<string>Infinity for Reddit</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.dcrousso.redditinfinity</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -31,7 +31,7 @@
 	<key>Description</key>
 	<string>Simple, lightweight, infinite scrolling for reddit</string>
 	<key>DeveloperIdentifier</key>
-	<string>0000000000</string>
+	<string>Q5M4T22BE9</string>
 	<key>ExtensionInfoDictionaryVersion</key>
 	<string>1.0</string>
 	<key>Permissions</key>
